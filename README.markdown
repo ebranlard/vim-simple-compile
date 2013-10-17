@@ -23,9 +23,9 @@ Below is a list of functionalities. Defaultmappings are written within parenthes
 Mappings can be overriden in your vimrc or directly in the plugin file.
 
 Functionalities for simple and quick compilation:
-- "Compile current file" (<F2>) []
-- "Run current file"     (<F4>) []
-- "View current file"    (<F5>) []
+- "Compile current file" (F2) []
+- "Run current file"     (F4) []
+- "View current file"    (F5) []
 
 Mappings if makefile is present
 - "Make"      (,m)  [make]
