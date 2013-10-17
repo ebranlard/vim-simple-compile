@@ -19,7 +19,7 @@ The principle is simple though and everything is gathered in one file.
 Functionalities
 ----------------
 
-Below is a list of functionalities. Defaultmappings are written within parenthesis and functions within brackets. 
+Below is a list of functionalities. Default mappings are written within parenthesis and functions within brackets. 
 Mappings can be overriden in your vimrc or directly in the plugin file.
 
 Functionalities for simple and quick compilation:
