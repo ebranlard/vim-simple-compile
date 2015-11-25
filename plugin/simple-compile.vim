@@ -12,6 +12,7 @@ autocmd FileType fortran    let b:comp_prg = 'gfortran %'
 autocmd FileType tex        let b:comp_prg = 'pdflatex -synctex=1 --shell-escape --interaction=nonstopmode % '
 autocmd FileType markdown   let b:comp_prg = 'flavor.rb % >'.expand("%:p:r").".html"
 autocmd FileType make       let b:comp_prg = 'make' 
+autocmd FileType pascal     let b:comp_prg = 'fpc %' 
 
 " Running program
 let b:run_prg ='echo "Running program not set for this language..."' 
@@ -23,6 +24,7 @@ autocmd FileType fortran    let b:run_prg = './a.out'
 autocmd FileType tex        let b:run_prg = 'evince "'.expand("%:p:r").'.pdf" &'
 autocmd FileType markdown   let b:run_prg = 'iceweasel "'.expand("%:p:r").'.html" &'
 autocmd FileType make       let b:run_prg = 'make' 
+autocmd FileType pascal     let b:run_prg = expand("%:p:r")
 
 
 " Viewing program
