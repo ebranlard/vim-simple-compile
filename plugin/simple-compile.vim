@@ -10,7 +10,8 @@ autocmd FileType sh         let b:comp_prg = './'.expand("%")
 autocmd FileType python     let b:comp_prg = '/usr/bin/env python %'
 autocmd FileType fortran    let b:comp_prg = 'gfortran %'
 autocmd FileType tex        let b:comp_prg = 'pdflatex -synctex=1 --shell-escape --interaction=nonstopmode % '
-autocmd FileType markdown   let b:comp_prg = 'flavor.rb % >'.expand("%:p:r").".html"
+" autocmd FileType markdown   let b:comp_prg = 'flavor.rb % >'.expand("%:p:r").".html"
+autocmd FileType markdown   let b:comp_prg = 'pandoc -f markdown % >'.expand("%:p:r").".html"
 autocmd FileType make       let b:comp_prg = 'make' 
 autocmd FileType pascal     let b:comp_prg = 'fpc %' 
 
