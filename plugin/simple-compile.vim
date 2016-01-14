@@ -14,6 +14,8 @@ autocmd FileType tex        let b:comp_prg = 'pdflatex -synctex=1 --shell-escape
 autocmd FileType markdown   let b:comp_prg = 'pandoc -f markdown % >'.expand("%:p:r").".html"
 autocmd FileType make       let b:comp_prg = 'make' 
 autocmd FileType pascal     let b:comp_prg = 'fpc %' 
+autocmd FileType autohotkey let b:comp_prg = 'cmd /c ""C:\Program Files\AutoHotkey\AutoHotkeyU64 patch.exe"" %' 
+" autocmd FileType autohotkey let b:comp_prg = '""C:\Program Files\AutoHotkey\AutoHotkeyU64 patch.exe" % "'
 
 " Running program
 let b:run_prg ='echo "Running program not set for this language..."' 
@@ -44,7 +46,12 @@ autocmd FileType markdown   let b:show_prg = 'reload-iceweasel-tab'
 map <silent> ,m :make<CR><CR>
 noremap <silent> ,te :w<CR>:make test<CR>
 " mappings for compilation
-noremap <F2> :w<CR>:!<c-r>=b:comp_prg<cr><cr>
+
+if has("gui_win32")
+    noremap <F2> :w<CR>:!start <c-r>=b:comp_prg<cr><cr>
+else
+    noremap <F2> :w<CR>:!<c-r>=b:comp_prg<cr><cr>
+endif
 " map <F2> :w<CR>:cexpr system('ls -al')
 " mappings for run
 nnoremap <F4>       :!<c-r>=b:run_prg<cr><cr>
